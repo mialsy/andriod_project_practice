@@ -1,73 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <!--Attention! here goes all the sub views, this is the start of the LinearLayout body.-->
+    <!--Attention! here goes all the sub views, this is the start of the ConstraintLayout body.-->
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:hint="your name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:hint="your email"
+        app:layout_constraintLeft_toLeftOf="@id/nameEditText"
+        app:layout_constraintRight_toRightOf="@id/nameEditText"
+        app:layout_constraintTop_toBottomOf="@id/nameEditText"/>
+
+    <Button
+        android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#f44336"
-        android:layout_gravity="start|top"
-        android:text="Top Left" />
+        android:layout_marginTop="20dp"
+        android:text="Submit"
+        app:layout_constraintLeft_toLeftOf="@id/emailEditText"
+        app:layout_constraintTop_toBottomOf="@id/emailEditText" />
 
     <TextView
+        android:id="@+id/welcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#E91E63"
-        android:layout_gravity="top|center"
-        android:text="Top Center" />
+        android:layout_marginTop="20dp"
+        android:text="Welcome Guest"
+        app:layout_constraintStart_toStartOf="@id/nameEditText"
+        app:layout_constraintTop_toBottomOf="@id/submitButton" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#9C27B0"
-        android:layout_gravity="top|end"
-        android:text="Top Right" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#673AB7"
-        android:layout_gravity="center|start"
-        android:text="Center Left" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#3F51B5"
-        android:layout_gravity="center|center_horizontal"
-        android:text="Center" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#2196F3"
-        android:layout_gravity="center|end"
-        android:text="Center Right" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#03A9F4"
-        android:layout_gravity="bottom|start"
-        android:text="Bottom Left" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00BCD4"
-        android:layout_gravity="bottom|center"
-        android:text="Bottom Center" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#009688"
-        android:layout_gravity="bottom|end"
-        android:text="Bottom Right" />
-
-    <!--Attention! This is the end of the LinearLayout body.-->
-</FrameLayout>
+    <!--Attention! This is the end of the ConstraintLayout body.-->
+</androidx.constraintlayout.widget.ConstraintLayout>
